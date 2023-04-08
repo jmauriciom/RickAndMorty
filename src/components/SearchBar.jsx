@@ -12,7 +12,7 @@ export default function SearchBar({onSearch}) {
 
   return (
       <div>
-        <input type='search' value={id} onChange={handleChange} />
+        <input type='search' className={styles.redondeado} value={id} onChange={handleChange} />
         <button className={styles.boton} onClick={() =>{onSearch(id)}}>Agregar</button>
       </div>
     )
