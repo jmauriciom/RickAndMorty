@@ -8,7 +8,7 @@ export default function Card(props) {
       <div className={styles.container}>
         <div className={styles.card}>
             <div className={styles.content}>
-              <button className='boton' onClick={() => props.onClose(props.id)}>X</button>
+              <button className={styles.closeButton} onClick={() => props.onClose(props.id)}>X</button>
 
         <Link to={`/detail/${props.id}`} >
         <h3 className="card-name">{props.name}</h3>

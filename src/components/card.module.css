@@ -1,13 +1,21 @@
 body {
-  background-image: url(./Imagenes/rick-y-morty-en-atardecer_2560x1440_xtrafondos.com.jpg);
+  background-image: url(./Imagenes/rym\ swag.jpg);
   background-size: 100%;
   font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .container .card{
   width: 300px;
   height: 590px;
-  margin: 30px;
+  margin: 10px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
@@ -18,17 +26,6 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(15px);
-  /* background-color: rgb(0, 165, 154);
-  padding: 10px;
-  border-radius: 8px;
-  border: 5px solid;
-  margin: 20px ;
-  box-shadow: -1rem 0 3rem;
-  overflow: hidden;
-  text-align: center;
-  transition: all 0.25s;
-  width: 300px;
-  height: 450px; */
 }
 
 .container .card .content{
@@ -36,14 +33,16 @@ body {
 }
 
 .navbar {
-  background-color: #333333;
+  background: rgba(24, 22, 22, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .boton {
-  background-color: #0077cc;
+  background-color: #d76be6;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -60,23 +59,6 @@ body {
   background-color: #03ecd9;
 }
 
-.carta{
-  background-image: linear-gradient(to bottom, #05c2e4, #f00303);
-  /* background-color: rgb(102, 146, 191); */
-  padding: 10px;
-  border: 5px solid black;
-  margin: 10px ;
-  border-radius: 10px;
-  box-shadow: -1rem 0 4rem;
-  text-align: center;
-  width: 300px;
-  height: 450px;
-  overflow: hidden;
-}
-.cartaImg {
-  width: 300px;
-}
-
 .miLink {
   font-family: Arial, sans-serif; 
   font-size: 16px;
@@ -86,5 +68,19 @@ body {
 
 .redondeado {
   border-radius: 50px;
-  font-size: 20px;
+  font-size: 25px;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  backdrop-filter: blur(15px);
+}
+
+.closeButton:hover {
+  background-color: #e394ee;
 }
