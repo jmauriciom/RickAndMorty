@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Validation from "./Validation";
 
-export default function Form () {
+
+export default function Form ({login}) {
 
   const [userData, setUserdata] = useState({
     email: "",
@@ -11,33 +13,14 @@ export default function Form () {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(errors);
-    if(errors.email || errors.password) {
-      alert("ERROR")
-    } else {
-      alert("LOGIN EXITOSO")
-    }
+    login(userData)
   }
 
-  const validation = (values) => {
-    let errors = {};
-    if (!values.email) {
-      errors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = "Email address is invalid";
-    }
-    if (!values.password) {
-      errors.password = "Password is required";
-    } else if (values.password.length < 6) {
-      errors.password = "Password needs to be 6 characters or more";
-    }
-    return errors;
-  };
 
   const handleInputChange = (event) => {
     const { name, value} = event.target;
     setUserdata({ ...userData, [name]: value });
-    setErrors(validation(userData));
+    Validation({ ...userData, [name]: value }, errors, setErrors)
     }
     
   return (
