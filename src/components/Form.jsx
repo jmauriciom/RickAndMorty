@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import validation from "./validation";
-
 
 export default function Form () {
 
@@ -13,13 +11,33 @@ export default function Form () {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("LOGIN EXITOSO")
+    console.log(errors);
+    if(errors.email || errors.password) {
+      alert("ERROR")
+    } else {
+      alert("LOGIN EXITOSO")
+    }
   }
+
+  const validation = (values) => {
+    let errors = {};
+    if (!values.email) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = "Email address is invalid";
+    }
+    if (!values.password) {
+      errors.password = "Password is required";
+    } else if (values.password.length < 6) {
+      errors.password = "Password needs to be 6 characters or more";
+    }
+    return errors;
+  };
 
   const handleInputChange = (event) => {
     const { name, value} = event.target;
     setUserdata({ ...userData, [name]: value });
-    validation({ ...userData, [name]: value }, setErrors ,errors )
+    setErrors(validation(userData));
     }
     
   return (
@@ -34,7 +52,9 @@ export default function Form () {
                 <input type="text" name="password" value={userData.password} onChange={handleInputChange}/>
                   <span>{errors.password}</span>
               </div>
-              <button type="submit">Submit</button> 
+              {
+                errors.email || errors.password ? <button type="submit" disabled>Submit</button> : <button type="submit">Submit</button>
+              }
         </form>
       )
 }

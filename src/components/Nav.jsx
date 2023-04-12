@@ -11,12 +11,15 @@ const Nav = ({onSearch}) => {
     return (
         <nav className={styles.navbar}>
                 <SearchBar onSearch={onSearch} />
-                <button className={styles.boton} onClick={() =>{onSearch(generarNumeroAleatorio())}}>Random</button>
+                <button className={styles.boton} onClick={() =>{onSearch(generarNumeroAleatorio())}}>PJ Random</button>
                 <button className={styles.boton}>
                     <Link to="/home" className={styles.miLink}>Home </Link>
                 </button>
                 <button className={styles.boton}>
-                    <Link to="/about" className={styles.miLink}>About </Link>
+                    <Link to="/Favorites" className={styles.miLink}>Favoritos </Link>
+                </button>
+                <button className={styles.boton}>
+                    <Link to="/about" className={styles.miLink}>Sobre mi </Link>
                 </button>
         </nav>
 

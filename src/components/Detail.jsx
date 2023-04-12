@@ -3,6 +3,7 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useState } from "react"
 import { useEffect } from "react"
+import styles from './detail.module.css'
 
 
 
@@ -25,13 +26,13 @@ const Detail = () => {
     }, [id]);
 
     return (
-        <div>
-            <h2>{character?.name}</h2>
-            <h2>{character?.status}</h2>
-            <h2>{character?.species}</h2>
-            <h2>{character?.gender}</h2>
-            <h2>{character?.origin?.name}</h2>
-            <img src={character?.image} alt={character?.name}/>
+        <div className={styles.contdetail}>
+            <h2 className={styles.text} >{character?.name}</h2>
+            <h2 className={styles.text}>{character?.status}</h2>
+            <h2 className={styles.text}>{character?.species}</h2>
+            <h2 className={styles.text}>{character?.gender}</h2>
+            <h2 className={styles.text}>{character?.origin?.name}</h2>
+            <img className="" src={character?.image} alt={character?.name}/>
         </div>
     )
 }

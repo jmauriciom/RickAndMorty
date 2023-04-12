@@ -1,8 +1,9 @@
 import Card from './Card';
+import styles from './card.module.css'
 
 export default function Cards ({characters, onClose}) {
   return (
-    <div style={{ display: 'flex'}}>
+    <div className={styles.container}>
       {characters.map((char) => (
         <Card
           id ={char.id}
