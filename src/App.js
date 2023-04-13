@@ -46,29 +46,29 @@ function App() {
         }
     }
 
-    const logout = () => {
-        setAccess(false);
-        navigate('/');
-    }
+//    const logout = () => {
+//       setAccess(false);
+//       navigate('/');
+//   }
 
-    useEffect(() => {
-        !access && navigate('/');
-     }, [access, navigate]);
+  useEffect(() => {
+      !access && navigate('/');
+   }, [access, navigate]);
 
-   //  const location = useLocation();
+ //  const location = useLocation();
 
-   return (
-      <div className='App'>
-         <Nav onSearch={onSearch}/> {/* Nav siempre aparecerá en todas las rutas */}
-         <Routes>
-            <Route path="/" element={<Form login={login}/>}/>
-            <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>} /> {/* Cards solo aparecerá en la ruta /home */}
-            <Route path="/about" element={<About/>} /> {/* About solo aparecerá en la ruta /about */}
-            <Route path="/favorites" element={<Favorites/>} />
-            <Route path="/detail/:id" element={<Detail/>} /> {/* Detail aparecerá en la ruta /detail/:id, donde :id es un parámetro dinámico */}
-         </Routes>
-      </div>
-   );
+ return (
+    <div className='App'>
+       <Nav onSearch={onSearch}/> {/* Nav siempre aparecerá en todas las rutas */}
+       <Routes>
+          <Route path="/" element={<Form login={login}/>}/>
+          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>} /> {/* Cards solo aparecerá en la ruta /home */}
+          <Route path="/about" element={<About/>} /> {/* About solo aparecerá en la ruta /about */}
+          <Route path="/favorites" element={<Favorites/>} />
+          <Route path="/detail/:id" element={<Detail/>} /> {/* Detail aparecerá en la ruta /detail/:id, donde :id es un parámetro dinámico */}
+       </Routes>
+    </div>
+ );
 }
 
 export default App;
