@@ -34,7 +34,7 @@ export default function Form ({login}) {
                   <span>{errors.email}</span>
                   </div>
                 <label htmlFor="Password">Contraseña:</label>
-                <input type="text" name="password" value={userData.password} placeholder="Contraseña" onChange={handleInputChange}/>
+                <input type="password" name="password" value={userData.password} placeholder="Contraseña" onChange={handleInputChange}/>
                   <div>
                   <span>{errors.password}</span>
                   </div>
@@ -45,3 +45,5 @@ export default function Form ({login}) {
         </div>
       )
 }
+
+//haceme un login en javascript?

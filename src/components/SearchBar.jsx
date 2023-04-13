@@ -11,13 +11,14 @@ export default function SearchBar({ onSearch }) {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      event.preventDefault(); 
+      event.preventDefault();
+      handleSearch();
     }
   }
 
   const handleSearch = () => {
-    onSearch(id); 
-    setId("");
+    onSearch(id); // Invocar la función de búsqueda pasando el valor de id
+    setId(""); // Limpiar el valor del input estableciéndolo en una cadena vacía
   }
 
   return (
