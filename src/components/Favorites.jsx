@@ -33,11 +33,11 @@ const Favorites = () => {
       </select>
       <label htmlFor="genero">Género:</label>
       <select id="genero" onChange={handleFilter}>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Genderless">Genderless</option>
-        <option value="unknown">Unknown</option>
-        <option value="allCharacters">Unknown</option>
+        <option value="Male">Masculino</option>
+        <option value="Female">Masculino</option>
+        <option value="Genderless">Sin genero</option>
+        <option value="unknown">Desconocido</option>
+        <option value="allCharacters">Todos los favoritos</option>
       </select>
 
       <div className={styles.container}>

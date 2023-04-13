@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 myFavorites:
-                payload === 'allCharacters'
+                action.payload === 'allCharacters'
                 ? [...state.allCharacters]
                 : filteredCharacters
             };
