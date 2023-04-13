@@ -37,6 +37,7 @@ const Favorites = () => {
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>
         <option value="unknown">Unknown</option>
+        <option value="allCharacters">Unknown</option>
       </select>
 
       <div className={styles.container}>

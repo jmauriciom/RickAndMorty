@@ -22,7 +22,10 @@ const rootReducer = (state = initialState, action) => {
             const filteredCharacters = allCharactersCopy.filter((char) => char.gender === action.payload);
             return {
                 ...state,
-                myFavorites: filteredCharacters
+                myFavorites:
+                payload === 'allCharacters'
+                ? [...state.allCharacters]
+                : filteredCharacters
             };
         case 'ORDER_CARDS':
             let charactersCopia = [...state.myFavorites];
