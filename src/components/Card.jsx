@@ -37,7 +37,7 @@ function Card({ id, name, status, species, gender, origin, image, onClose, addFa
         setIsfav(true);
       }
     }
-  }, [myFavorites]);
+  }, [myFavorites, id]);
 
 
 
