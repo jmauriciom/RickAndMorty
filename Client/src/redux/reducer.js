@@ -5,27 +5,23 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD_FAV":
+        case 'ADD_FAV':
             return {
-                ...state,
-                allCharacters: [...state.allCharacters, action.payload],
-                myFavorites: [...state.myFavorites, action.payload]
+                ...state, myFavorites: action.payload, allCharacters: action.payload
             }
-        case "REMOVE_FAV":
+        case 'REMOVE_FAV':
             return {
-                ...state,
-                myFavorites: state.myFavorites.filter((char) => char.id !== action.payload)
+                ...state, myFavorites: action.payload,  allCharacters: action.payload
             }
-
         case "FILTER_CARDS":
             const allCharactersCopy = [...state.allCharacters];
             const filteredCharacters = allCharactersCopy.filter((char) => char.gender === action.payload);
             return {
                 ...state,
                 myFavorites:
-                action.payload === 'allCharacters'
-                ? [...state.allCharacters]
-                : filteredCharacters
+                    action.payload === 'allCharacters'
+                        ? [...state.allCharacters]
+                        : filteredCharacters
             };
         case 'ORDER_CARDS':
             let charactersCopia = [...state.myFavorites];

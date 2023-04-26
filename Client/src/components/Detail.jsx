@@ -8,14 +8,14 @@ import styles from './detail.module.css'
 
 
 const Detail = () => {
-    const URL = 'https://be-a-rym.up.railway.app/api/character'
-    const API_KEY = '99148198607c.3a0dd5cdb1283d5d5ed6'
+    const URL = "http://localhost:3001/rickandmorty/character/${id}"
+    // const API_KEY = '99148198607c.3a0dd5cdb1283d5d5ed6'
     const {id} = useParams()
 
     const [character, setCharacter] = useState({})
 
     useEffect(() => {
-        axios(`${URL}/${id}?key=${API_KEY}`).then(({ data }) => {
+        axios(`${URL}/${id}`).then(({ data }) => {
         if (data.name) {
             setCharacter(data);
         } else {
