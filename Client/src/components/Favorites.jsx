@@ -21,9 +21,6 @@ const Favorites = () => {
   };
   const [aux, setAux] = useState(false)
 
-
-
-
   return (
     <>
       <label htmlFor="orden">Orden:</label>
